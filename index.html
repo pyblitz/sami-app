@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sami App — Draft</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="logo-wrap">
+    <img src="assets/logo.svg" alt="Sami App logo" class="logo" width="72" height="72">
+    <div>
+  <h1>Sami App</h1>
+  <p class="tagline">Templates • Designer • Promotions • Automations • Sami &amp; Sara Discuss</p>
+    </div>
+  </div>
+  <nav>
+    <button data-tab="home" class="nav-btn active">Home</button>
+    <button data-tab="templates" class="nav-btn">Templates</button>
+    <button data-tab="designer" class="nav-btn">Designer</button>
+    <button data-tab="promotions" class="nav-btn">Promotions</button>
+    <button data-tab="automations" class="nav-btn">Automations</button>
+    <button data-tab="discuss" class="nav-btn">Sami &amp; Sara Discuss</button>
+    <button data-tab="login" class="nav-btn">Login</button>
+  </nav>
+</header>
+<main>
+  <section id="home" class="tab active">
+    <h2>Welcome to Sami App (Draft)</h2>
+    <p>This is a responsive web app draft. It works on phone, tablet, and desktop in one codebase.</p>
+    <p><strong>Install note:</strong> After this repo is approved and published, you can open it on your phone and use “Add to Home Screen” for an app-like install. This is not a Play Store listing.</p>
+    <div class="cards">
+      <button class="card" data-goto="templates">Templates Maker<br><small>Pick a preset, edit it</small></button>
+      <button class="card" data-goto="designer">Designer<br><small>Canvas editor, PNG download</small></button>
+      <button class="card" data-goto="promotions">Promotions<br><small>Caption maker, copy only</small></button>
+      <button class="card" data-goto="automations">Automations<br><small>Local checklists only</small></button>
+    </div>
+  </section>
+
+  <section id="templates" class="tab">
+    <h2>Templates Maker</h2>
+    <p>Concept presets only — final design is yours to edit. No copied brand logos.</p>
+    <div id="template-grid" class="cards"></div>
+  </section>
+
+  <section id="designer" class="tab">
+    <h2>Designer</h2>
+    <label>Headline <input id="d-headline" value="Your Brand Here"></label>
+    <label>Subtext <input id="d-subtext" value="Sample First • Quality Design"></label>
+    <label>Headline size <input type="range" id="d-size" min="28" max="72" value="56"></label>
+    <label>Background <input type="color" id="d-bg" value="#0f172a"></label>
+    <label>Text colour <input type="color" id="d-color" value="#ffffff"></label>
+    <canvas id="d-canvas" width="800" height="450"></canvas>
+    <button id="d-download">Download PNG</button>
+  </section>
+
+  <section id="promotions" class="tab">
+    <h2>Promotions</h2>
+    <p>Only the facts you type will appear. No auto-posting, no fake results.</p>
+    <label>Product / Service <input id="p-name" placeholder="Example: Logo Design"></label>
+    <label>Price <input id="p-price" placeholder="Example: Rs 1,500"></label>
+    <label>Call to action <input id="p-cta" value="Sample First — Message to order"></label>
+    <button id="p-generate">Generate caption</button>
+    <textarea id="p-output" rows="6" readonly></textarea>
+    <button id="p-copy">Copy caption</button>
+  </section>
+
+  <section id="automations" class="tab">
+    <h2>Automations</h2>
+    <p>Local checklists only. These do not post to any account and do not store any login.</p>
+    <ul id="auto-list"></ul>
+    <p id="auto-note"></p>
+  </section>
+
+  <section id="discuss" class="tab">
+    <h2>Sami &amp; Sara Discuss</h2>
+    <p>Sami and Sara are fictional assistant characters — a male-female co-host/expert pair, not real people. No romantic roleplay, no real-relationship claim. Local text discussion only: no LLM, no API, no auto-post, no voice call.</p>
+    <label>Your idea <textarea id="discuss-idea" rows="4" placeholder="Write your idea here"></textarea></label>
+    <button id="discuss-go">Discuss with Sami &amp; Sara</button>
+    <h3>Sami (plan / logic)</h3>
+    <p id="discuss-sami"></p>
+    <h3>Sara (QC / risk / user view)</h3>
+    <p id="discuss-sara"></p>
+    <h3>Joint conclusion</h3>
+    <p id="discuss-joint"></p>
+  </section>
+
+  <section id="login" class="tab">
+    <h2>Login</h2>
+    <p><strong>No-key system.</strong></p>
+    <p>This app has no sign-in, no API key, and no secret. If a platform sign-in is ever needed, the owner signs in himself on his own device/browser — never through this app, never through chat.</p>
+    <button id="login-btn" disabled>Sign-in not available in this app (by design)</button>
+    <p><small>See docs/no-key-system.md.</small></p>
+  </section>
+</main>
+<footer><small>Sami App — Web app. Not a Play Store listing. No API key, no sign-in in this app.</small></footer>
+<script src="js/config.js"></script>
+<script src="js/templates.js"></script>
+<script src="js/designer.js"></script>
+<script src="js/promotions.js"></script>
+<script src="js/automations.js"></script>
+<script src="js/discuss.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
