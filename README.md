@@ -1,65 +1,50 @@
-# Sami App
+# SAMI & SARA AI 2.0 — Advanced Dual-Agent Intelligence Platform
 
-A responsive web app (PWA) for templates, design, promotions, local automations,
-and Sami & Sara discussion.
+Sami (Chief Intelligence Officer) strategizes and builds. Sara (Chief Intelligence
+Reviewer) independently challenges, audits, and can reject weak solutions.
+Final decisions are always the user's.
 
-**Status: Published as a web app on GitHub. Not a Play Store listing.**
-**No API key, no sign-in, no secret in this repo.** Platform sign-in, if ever
-needed, is done by the owner himself on his own device/browser.
+## What is real in this build
 
-## What it does
-- Templates Maker: pick a preset, edit text and colours, send it to the Designer.
-- Designer: a simple canvas editor. Edit headline, subtext, colours, and download a PNG.
-- Promotions: build a promotion caption from facts you type, then copy it. No auto-posting.
-- Automations: local checklists and reminders only. No account login is stored here.
-- Sami & Sara Discuss: Sami gives plan/logic, Sara gives QC/risk/user view, then a
-  joint conclusion, against 7 lenses. Local text only — no LLM, no API, no auto-post,
-  no voice call. Sami and Sara are fictional assistant characters, not real people.
+- 7-phase dual-agent engine (Understand, Strategize, Challenge, Debate, Improve,
+  Final Audit, Delivery) with review cycles capped at 3 — no infinite loops.
+- 6 modes: Quick, Dual, Expert, Autonomous, Research, Developer.
+- Task planner with approval gates: sensitive actions (publish, pay, send,
+  delete) are NEVER auto-executed.
+- Long-term memory: personal vs project, searchable, editable, deletable,
+  exportable — localStorage only, nothing leaves the device.
+- 12 modules with real local tools: research planning (no invented citations),
+  coding lab + JS runner, design canvas + PNG download, business plans with
+  approved rates, content/SEO plans, lessons, CSV/JSON data analysis,
+  automation checklists, security pattern scan, project plans, marketing
+  outlines, document stats.
+- Premium dashboard: Home, Dual Discussion, AI Workspace, Memory Center,
+  Settings. No non-functional buttons: every button runs local code or
+  plainly states what is not configured.
 
-## Demo
-Open `index.html` in a browser. No build step, no install needed.
-On a phone, use "Add to Home Screen" for an app-like install. This is not a Play Store listing.
+## What is honestly NOT here
 
-## Tech Stack
-HTML, CSS, JavaScript. No framework, no backend.
+- This is a LOCAL engine, not a real LLM. It does not call any AI provider.
+- LLM providers, web search, image generation, databases and backends are
+  shown as NOT CONFIGURED — not faked.
+- No API key, password, OTP or secret is stored anywhere in this repo.
+  Real LLM use would need the user's own provider setup on their own device
+  and is never required.
+- No account, no sign-in, no backend, no Play Store release in this build.
 
-## Installation
-```bash
-git clone https://github.com/pyblitz/sami-app.git
-cd sami-app
-# Open index.html in a browser. No server needed.
-```
+## Run
 
-## Usage
-1. Open Home, pick a section.
-2. Templates: choose a preset, then edit it in Designer.
-3. Designer: type headline and subtext, pick colours, click Download PNG.
-4. Promotions: type product, price, and call to action, click Generate, then Copy.
-5. Automations: tick a checklist. Data stays in your browser only.
-6. Sami & Sara Discuss: type an idea, click Discuss, read Sami, Sara, and the joint conclusion.
+Open `index.html` in a browser, or visit the GitHub Pages site.
+No build step, no install, no key.
 
-## Project structure
-- `index.html` — app shell and sections
-- `css/style.css` — responsive layout
-- `js/` — app, templates, designer, promotions, automations, discuss, config (no-key only)
-- `templates/templates.json` — concept presets (10)
-- `docs/no-key-system.md` — no-key system
-- `docs/sami-and-sara-characters.md` — Sami & Sara character system
+## Files
 
-## How to run / test
-- Open on phone, tablet, and desktop widths. Text must not be cut off.
-- Designer PNG download must work in the browser.
-- Promotions copy button must copy only the text you typed.
-- Automations must not post anywhere and must not ask for any password.
-- Discuss must show Sami, Sara, and a joint conclusion for any idea typed.
-
-## Login
-No sign-in in this app, by design. No password or OTP is ever asked in chat, and
-no secret is stored in this repo. See `docs/no-key-system.md`.
-
-## Contributing
-No contributions are being accepted until the owner approves further changes.
-
-## License
-Proposed: MIT (proposal only, final only after owner approval). No LICENSE file
-is included yet.
+- `index.html`, `css/style.css` — dashboard shell
+- `js/engine.js` — 7-phase engine + modes
+- `js/memory.js` — personal/project memory
+- `js/tasks.js` — task planner
+- `js/modules.js` — 12 modules
+- `js/app.js` — dashboard wiring
+- `templates/templates.json` — 10 design templates (from v1)
+- `assets/logo.svg` — original S monogram
+- `docs/limitations.md` — full honest limitations
